@@ -1,6 +1,7 @@
 package me.dio.santander_dev_week_2023.model;
 
 import jakarta.persistence.*;
+import me.dio.santander_dev_week_2023.model.dto.UserCreateDTO;
 
 import java.util.List;
 
@@ -30,6 +31,14 @@ public class User {
         this.features = features;
         this.card = card;
         this.news = news;
+    }
+
+    public User(UserCreateDTO userCreateDTO) {
+        this.name = userCreateDTO.name();
+        this.account = userCreateDTO.account();
+        this.features = userCreateDTO.features();
+        this.card = userCreateDTO.card();
+        this.news = userCreateDTO.news();
     }
 
     public Long getId() {
